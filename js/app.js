@@ -1,8 +1,4 @@
-/* =====================================================
-   ROYAL STAY HOTEL BOOKING SYSTEM (Vanilla JS only)
-===================================================== */
 
-/* ---------- UI ENHANCEMENTS (animations / nav) ---------- */
 function initUI() {
   // Sticky navbar shadow
   var navbar = document.getElementById("navbar");
@@ -30,7 +26,7 @@ function initUI() {
     });
   }
 
-  // Auto active link (if class not set)
+  // Auto active link
   try {
     var page = (location.pathname.split("/").pop() || "index.html").split("?")[0];
     if (menu) {
@@ -97,9 +93,6 @@ function initUI() {
   } catch (e) {}
 }
 
-/* =====================================================
-   DARK MODE
-===================================================== */
 function initTheme() {
   var savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") document.body.classList.add("dark-theme");
@@ -123,9 +116,6 @@ function updateThemeButton(button) {
   button.innerHTML = document.body.classList.contains("dark-theme") ? "☀️ Light" : "🌙 Dark";
 }
 
-/* =====================================================
-   MAIN
-===================================================== */
 document.addEventListener("DOMContentLoaded", function () {
   initTheme();
   initUI();
@@ -135,9 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initInvoice();
 });
 
-/* =====================================================
-   BOOKING
-===================================================== */
 function initBooking() {
   var form = document.getElementById("bookingForm");
   if (!form) return;
@@ -252,9 +239,6 @@ function initBooking() {
   });
 }
 
-/* =====================================================
-   PAYMENT UI
-===================================================== */
 function initPayment() {
   var paymentMethod = document.getElementById("paymentMethod");
   if (!paymentMethod) return;
@@ -278,9 +262,6 @@ function initPayment() {
   });
 }
 
-/* =====================================================
-   DASHBOARD
-===================================================== */
 function initDashboard() {
   var table = document.getElementById("bookingTableBody");
   if (!table) return;
@@ -356,9 +337,6 @@ function cancelBooking(id) {
   loadDashboard();
 }
 
-/* =====================================================
-   SEARCH
-===================================================== */
 document.addEventListener("input", function (event) {
   if (event.target.id !== "bookingSearch") return;
   var keyword = event.target.value.toLowerCase().trim();
@@ -367,9 +345,6 @@ document.addEventListener("input", function (event) {
   });
 });
 
-/* =====================================================
-   LOGIN / LOGOUT
-===================================================== */
 document.addEventListener("DOMContentLoaded", function () {
   var loginForm = document.getElementById("loginForm");
   if (!loginForm) return;
@@ -382,7 +357,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("adminLoggedIn", "true");
       window.location.href = "dashboard.html";
     } else {
-      error.innerText = "❌ Invalid username or password.";
+      error.innerText = "Invalid username or password.";
       loginForm.style.animation = "none";
       void loginForm.offsetWidth;
       loginForm.style.animation = "heroUp .4s ease";
@@ -394,9 +369,6 @@ function logoutAdmin() {
   window.location.href = "login.html";
 }
 
-/* =====================================================
-   INVOICE
-===================================================== */
 function initInvoice() {
   if (!document.getElementById("invoiceId")) return;
   loadInvoice();

@@ -1,62 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Dashboard - Royal Stay</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Royal Stay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header class="navbar" id="navbar">
-  <a class="logo" href="index.html">Royal<span>Stay</span></a>
-  <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
-  <nav id="navMenu">
-    <a href="index.html">Home</a>
-    <a href="rooms.html">Rooms</a>
-    <a href="booking.html">Book Now</a>
-    <a href="dashboard.html" class="active">Dashboard</a>
-  </nav>
-</header>
+  <header class="navbar" id="navbar">
+    <a class="logo" href="index.html">Royal<span>Stay</span></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="booking.html">Book Now</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+    </nav>
+  </header>
 
-<section class="page-header">
-  <h1>Admin Dashboard</h1>
-  <p>Manage all hotel reservations in real time</p><br>
-  <button class="logout-btn" onclick="logoutAdmin()">Logout →</button>
-</section>
+  <section class="page-header">
+    <h1>Admin Dashboard</h1>
+    <p>Manage all hotel reservations in real time</p><br>
+    <button class="logout-btn" onclick="logoutAdmin()">Logout →</button>
+  </section>
 
-<section class="dashboard-section container" style="max-width:1200px">
-  <div class="stats-container">
-    <div class="stat-card reveal"><h3>📅 Total Bookings</h3><h2 id="totalBookings">0</h2><small>▲ all time</small></div>
-    <div class="stat-card reveal reveal-d1"><h3>💰 Total Revenue</h3><h2 id="totalRevenue">৳0</h2><small>▲ confirmed only</small></div>
-    <div class="stat-card reveal reveal-d2"><h3>✅ Confirmed Bookings</h3><h2 id="confirmedBookings">0</h2><small>▲ active stays</small></div>
-  </div>
-
-  <div class="table-container reveal">
-    <div class="dashboard-header">
-      <h2>Booking Records</h2>
-      <div class="search-box" style="margin:0;min-width:280px">
-        <input type="text" id="bookingSearch" placeholder="🔍 Search name, phone or room...">
+  <section class="dashboard-section container" style="max-width:1200px">
+    <div class="stats-container">
+      <div class="stat-card reveal">
+        <h3>Total Bookings</h3>
+        <h2 id="totalBookings">0</h2><small>▲ all time</small>
+      </div>
+      <div class="stat-card reveal reveal-d1">
+        <h3>Total Revenue</h3>
+        <h2 id="totalRevenue">৳0</h2><small>▲ confirmed only</small>
+      </div>
+      <div class="stat-card reveal reveal-d2">
+        <h3>Confirmed Bookings</h3>
+        <h2 id="confirmedBookings">0</h2><small>▲ active stays</small>
       </div>
     </div>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr><th>ID</th><th>Customer</th><th>Phone</th><th>Room</th><th>Check-in</th><th>Check-out</th><th>Guests</th><th>Nights</th><th>Total</th><th>Status</th><th>Action</th></tr>
-        </thead>
-        <tbody id="bookingTableBody"></tbody>
-      </table>
+
+    <div class="table-container reveal">
+      <div class="dashboard-header">
+        <h2>Booking Records</h2>
+        <div class="search-box" style="margin:0;min-width:280px">
+          <input type="text" id="bookingSearch" placeholder="Search name, phone or room...">
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Customer</th>
+              <th>Phone</th>
+              <th>Room</th>
+              <th>Check-in</th>
+              <th>Check-out</th>
+              <th>Guests</th>
+              <th>Nights</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bookingTableBody"></tbody>
+        </table>
+      </div>
+      <p id="noBookings" class="no-bookings">No bookings available yet. New bookings will appear here.</p>
     </div>
-    <p id="noBookings" class="no-bookings">No bookings available yet. New bookings will appear here.</p>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="footer-bottom"><p>© 2026 <strong>Royal Stay Hotel</strong>. All Rights Reserved.</p></div>
-</footer>
+  <footer>
+    <div class="footer-bottom">
+      <p>© 2026 <strong>Royal Stay Hotel</strong>. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-<script src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
+
 </html>
