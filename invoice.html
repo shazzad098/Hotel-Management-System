@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Invoice - Royal Stay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="invoice-page">
+  <div class="invoice-container">
+    <div class="invoice-header">
+      <div>
+        <h1>◆ Royal Stay Hotel</h1>
+        <p>Booking Invoice • Official Receipt</p>
+      </div>
+      <div class="invoice-meta">
+        <small style="letter-spacing:2px;color:#cbbd9c">GRAND TOTAL</small>
+        <strong id="finalAmount">৳0</strong>
+      </div>
+    </div>
+
+    <div class="invoice-body">
+      <div class="invoice-info">
+        <div>
+          <h3>Guest Information</h3>
+          <p><strong>Booking ID:</strong> <span id="invoiceId"></span></p>
+          <p><strong>Guest Name:</strong> <span id="guestName"></span></p>
+          <p><strong>Email:</strong> <span id="guestEmail"></span></p>
+          <p><strong>Phone:</strong> <span id="guestPhone"></span></p>
+          <p><strong>Guests:</strong> <span id="guestCount"></span></p>
+        </div>
+        <div>
+          <h3>Stay Information</h3>
+          <p><strong>Room:</strong> <span id="guestRoom"></span></p>
+          <p><strong>Check-in:</strong> <span id="guestCheckin"></span></p>
+          <p><strong>Check-out:</strong> <span id="guestCheckout"></span></p>
+          <p><strong>Status:</strong> <span class="status confirmed">Confirmed</span></p>
+        </div>
+      </div>
+
+      <div class="invoice-table">
+        <table>
+          <thead><tr><th>Room</th><th>Price/Night</th><th>Nights</th><th>Total</th></tr></thead>
+          <tbody><tr><td id="invoiceRoom"></td><td id="invoicePrice"></td><td id="invoiceNights"></td><td id="invoiceTotal"></td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="invoice-payment">
+        <h3>Payment Information</h3>
+        <p><strong>Payment Method:</strong> <span id="invoicePaymentMethod"></span></p>
+        <p><strong>Transaction ID:</strong> <span id="invoiceTransactionId"></span></p>
+        <p><strong>Payment Status:</strong> <span id="invoicePaymentStatus" class="payment-paid"></span></p>
+      </div>
+
+      <div class="invoice-total"><h2>Grand Total: <span id="finalAmount2"></span></h2></div>
+      <div class="invoice-status">✔ Thank you for staying with Royal Stay. Show this invoice at reception.</div>
+      <div class="invoice-footer">Royal Stay Hotel • Gulshan, Dhaka • +880 1XXX-XXXXXX<br>stay@royalstay.com • Free cancellation within 24 hours</div>
+    </div>
+
+    <div class="invoice-buttons">
+      <button onclick="window.print()" class="submit-btn" style="width:auto;padding:13px 30px">🖨️ Print / Save PDF</button>
+      <a href="index.html" class="home-btn">Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
